@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StartPlatform : TowerPlatform
+public class StartPlatform : MonoBehaviour
 {
     [SerializeField] private Ball _ball;
     [SerializeField] private Transform _spawnPoint;

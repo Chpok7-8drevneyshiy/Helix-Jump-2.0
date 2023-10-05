@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ColorChanger : MonoBehaviour
 {
-    [SerializeField] private List<Material> Materials = new List<Material>();
+    [SerializeField] public List<Material> Materials = new List<Material>();
     [SerializeField] private List<string> MaterialsName = new List<string>();
-
-    private void Start()
+    private void Awake()
     {
+        TakeColor();
         Debug.Log(MaterialsName);
         for (int i = 0; i < Materials.Count; i++)
         {
@@ -22,6 +22,14 @@ public class ColorChanger : MonoBehaviour
         Debug.Log("sdelalasya");
         yield return new WaitForSeconds(3f);
         StartCoroutine(ChangeColor());
+    }
+
+    private void TakeColor()
+    {
+        while (Materials.Count >3)
+        {
+            Materials.Remove(Materials[Random.Range(0, Materials.Count)]);
+        }
     }
     private string RandomMaterial()
     {

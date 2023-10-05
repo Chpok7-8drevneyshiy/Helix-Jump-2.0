@@ -23,18 +23,6 @@ public class BallJumper : MonoBehaviour
     {
         DoJump();
     }
-
-/*    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.TryGetComponent(out PlatformSegment platformSegment))
-        {
-            string _materialName = platformSegment.GetComponent<MeshRenderer>().material.name;
-            if (_materialName == _currentCollor || collision.gameObject.GetComponent<StartPlatform>() == true)
-            {
-                DestroyPlatform(collision.gameObject);
-            }
-        }
-    }*/
     private void DoJump()
     {
         RaycastHit hit;

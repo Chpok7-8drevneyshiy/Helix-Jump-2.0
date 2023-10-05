@@ -258,11 +258,11 @@ MonoBehaviour:
   _towerCylinder: {fileID: 1104317859894815963, guid: f0ab9aa26d106de4bb8785a42b8ae106,
     type: 3}
   _additionalScale: 3
+  _startPlatform: {fileID: 5649865498329605528, guid: 1567844cf4bb6614b92eae46566bbb5b,
+    type: 3}
   _platform: {fileID: -526381978896788351, guid: fa68728d3372fcf4b8961933f180e58c,
     type: 3}
-  _finishPlatform: {fileID: 2200434154118891492, guid: 288517f850bd42441b62a64e4c78c1fb,
-    type: 3}
-  _startPlatform: {fileID: 5649865498329605528, guid: 1567844cf4bb6614b92eae46566bbb5b,
+  _finishPlatform: {fileID: 2269015437634064061, guid: 23486473d901cb54eb03a68ee524f531,
     type: 3}
   _startAndFinishAddishionalScale: 0.5
   levels: 20
@@ -515,9 +515,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Materials:
+  - {fileID: 2100000, guid: 2694a2807d06921428cfd6f58ffa4358, type: 2}
   - {fileID: 2100000, guid: da272fb477dd0ce478ac606eed9efe4a, type: 2}
-  - {fileID: 2100000, guid: 08d575ac230f9aa499e284b702a74706, type: 2}
   - {fileID: 2100000, guid: 5f4df63bf6ee6ef40b8d94740d5d88c2, type: 2}
+  - {fileID: 2100000, guid: cd1cfb83a24bf7f44a7104fc6f4d2d80, type: 2}
+  - {fileID: 2100000, guid: 08d575ac230f9aa499e284b702a74706, type: 2}
   MaterialsName: []
 --- !u!114 &963194230
 MonoBehaviour:

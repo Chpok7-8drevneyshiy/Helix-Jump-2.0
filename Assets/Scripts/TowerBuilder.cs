@@ -3,9 +3,9 @@ public class TowerBuilder : MonoBehaviour
 {
     [SerializeField] private GameObject _towerCylinder;
     [SerializeField] private float _additionalScale;
+    [SerializeField] private StartPlatform _startPlatform;
     [SerializeField] private TowerPlatform _platform;
     [SerializeField] private FinishPlatform _finishPlatform;
-    [SerializeField] private StartPlatform _startPlatform;
     [SerializeField] private float _startAndFinishAddishionalScale = 0.5f;
     public int levels;
     public float TowerScaleY => levels  + _startAndFinishAddishionalScale + _additionalScale /2f;
@@ -29,6 +29,16 @@ public class TowerBuilder : MonoBehaviour
         SpawnPlatforms(_finishPlatform, ref spawnPosition, Quaternion.identity, transform);
     }
     private void SpawnPlatforms(TowerPlatform platform, ref Vector3 platformPosition,Quaternion rotation, Transform parent)
+    {
+        Instantiate(platform, platformPosition, rotation, parent);
+        platformPosition.y -= 1.5f;
+    }
+    private void SpawnPlatforms(FinishPlatform platform, ref Vector3 platformPosition, Quaternion rotation, Transform parent)
+    {
+        Instantiate(platform, platformPosition, rotation, parent);
+        platformPosition.y -= 1.5f;
+    }
+    private void SpawnPlatforms(StartPlatform platform, ref Vector3 platformPosition, Quaternion rotation, Transform parent)
     {
         Instantiate(platform, platformPosition, rotation, parent);
         platformPosition.y -= 1.5f;
