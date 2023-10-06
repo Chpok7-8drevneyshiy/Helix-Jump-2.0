@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-//using System.Drawing;
-using System.Runtime.InteropServices;
 using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class BallJumper : MonoBehaviour
@@ -9,20 +5,23 @@ public class BallJumper : MonoBehaviour
     [SerializeField] private float _jumpForse;
     [SerializeField] private float _rayDisctace;
     [SerializeField] private LayerMask _platform;
+    [SerializeField] private Material _currentMaterial;
     [SerializeField] private string _currentCollor;
     [SerializeField] private Material startMaterial;
-
     private Rigidbody _rigidbody;
 
+    private void Awake()
+    {
+        EventManager.Colored += ChangeCurrentColor;
+        
+    }
     private void Start()
     {
-        _rigidbody = GetComponent<Rigidbody>();
         Initialized();
     }
     private void Initialized()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        EventManager.Colored += ChangeCurrentColor;
     }
     private void FixedUpdate()  
     {
@@ -58,13 +57,13 @@ public class BallJumper : MonoBehaviour
         Transform platform = babyPlatform.transform.parent;
         Destroy(platform.gameObject);
     }
-    private void ChangeCurrentColor(string currentColor)
+    private void ChangeCurrentColor(Material currentMaterial)
     {
-        _currentCollor = currentColor;
+        _currentMaterial = currentMaterial;
+        _currentCollor = currentMaterial.name;
     } 
     private void OnDestroy()
     {
         EventManager.Colored -= ChangeCurrentColor;
     }
-
 }

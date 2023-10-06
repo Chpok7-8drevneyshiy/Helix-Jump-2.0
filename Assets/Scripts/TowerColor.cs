@@ -1,18 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 public class TowerColor : MonoBehaviour
 {
-    [SerializeField] Color _color;
-
-    private void Initialize()
+    [SerializeField] private Tower _tower;
+    private void Awake()
     {
         EventManager.Colored += GetColor;
     }
+    private void GetColor(Material color)
+    {   
+        if (_tower == null)
+            _tower = FindObjectOfType<Tower>();
 
-    private void GetColor(string color)
+        _tower.GetComponent<MeshRenderer>().material = color;
+    }
+    private void OnDestroy()
     {
-
+        EventManager.Colored -= GetColor;
     }
 }

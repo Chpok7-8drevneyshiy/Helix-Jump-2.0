@@ -1,9 +1,10 @@
 ﻿using System;
+using UnityEngine;
 
 public class EventManager
 {
-    public static Action<string> Colored;
-    public static void DoColored(string colorName)
+    public static Action<Material> Colored;
+    public static void DoColored(Material colorName)
     {
         Colored?.Invoke(colorName);
     }   

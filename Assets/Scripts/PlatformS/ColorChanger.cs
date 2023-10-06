@@ -5,35 +5,35 @@ using UnityEngine;
 public class ColorChanger : MonoBehaviour
 {
     [SerializeField] public List<Material> Materials = new List<Material>();
-    [SerializeField] private List<string> MaterialsName = new List<string>();
+    public int ColorCount= 3;
+    public float TimeToChangeColor =5f;
     private void Awake()
     {
-        TakeColor();
-        Debug.Log(MaterialsName);
-        for (int i = 0; i < Materials.Count; i++)
-        {
-            MaterialsName.Add(Materials[i].name);
-        }
+        TakeMaterial();
         StartCoroutine(ChangeColor());
     }
     private IEnumerator ChangeColor()
     {
         EventManager.DoColored(RandomMaterial());
         Debug.Log("sdelalasya");
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(TimeToChangeColor);
         StartCoroutine(ChangeColor());
     }
 
-    private void TakeColor()
+    private void TakeMaterial()
     {
-        while (Materials.Count >3)
+        if (ColorCount > Materials.Count)
+        {
+            Debug.LogError("ColorCount>Materials");
+        }
+        while (Materials.Count > ColorCount)
         {
             Materials.Remove(Materials[Random.Range(0, Materials.Count)]);
         }
     }
-    private string RandomMaterial()
+    private Material RandomMaterial()
     {
-        return MaterialsName[Random.Range(0, Materials.Count)];
+        return Materials[Random.Range(0, Materials.Count)];
     }
 
 }
