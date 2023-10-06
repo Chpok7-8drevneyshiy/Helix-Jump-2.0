@@ -341,7 +341,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6bb75dfd531bf0439f32c70237d108e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materials: []
   _ball: {fileID: 4461942882658742842, guid: 0ea84668e339b664cb4de12cb9954bbf, type: 3}
   _spawnPoint: {fileID: 969683485183153206}
 --- !u!1 &1973526874112632848
@@ -523,7 +522,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2751164982322704142}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

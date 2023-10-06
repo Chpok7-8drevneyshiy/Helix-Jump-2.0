@@ -451,8 +451,8 @@ GameObject:
   - component: {fileID: 3299291421465003851}
   - component: {fileID: 4847814297850117419}
   - component: {fileID: 3334288593035530067}
-  - component: {fileID: 593681396770253815}
   - component: {fileID: 5824813593693615794}
+  - component: {fileID: 5508552153821379353}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Platform
@@ -525,14 +525,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a9f4806af82efe4c9ab6801bd29ea71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!23 &593681396770253815
-MeshRenderer:
+--- !u!114 &5824813593693615794
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4682861432011799793}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e624e93cdd95874fbb140c50f0b62b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!23 &5508552153821379353
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4682861432011799793}
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -566,18 +578,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5824813593693615794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4682861432011799793}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e624e93cdd95874fbb140c50f0b62b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5568462960633176170
 GameObject:
   m_ObjectHideFlags: 0

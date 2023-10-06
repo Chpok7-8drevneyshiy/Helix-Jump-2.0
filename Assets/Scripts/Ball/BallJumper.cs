@@ -19,6 +19,11 @@ public class BallJumper : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
         Initialized();
     }
+    private void Initialized()
+    {
+        _rigidbody = GetComponent<Rigidbody>();
+        EventManager.Colored += ChangeCurrentColor;
+    }
     private void FixedUpdate()  
     {
         DoJump();
@@ -57,11 +62,6 @@ public class BallJumper : MonoBehaviour
     {
         _currentCollor = currentColor;
     } 
-    private void Initialized()
-    {
-        _rigidbody = GetComponent<Rigidbody>();
-        EventManager.Colored += ChangeCurrentColor;
-    }
     private void OnDestroy()
     {
         EventManager.Colored -= ChangeCurrentColor;

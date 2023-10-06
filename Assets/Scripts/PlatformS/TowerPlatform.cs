@@ -19,7 +19,7 @@ public class TowerPlatform : MonoBehaviour
     private void Color()
     {
         foreach (Transform child in transform)
-        if (child.GetComponent<MeshRenderer>() && child.GetComponent<Plane>() == null)
+        if (child.GetComponent<MeshRenderer>())
         child.GetComponent<Renderer>().material = materials[Random.Range(0, materials.Count)];
     }
 }
